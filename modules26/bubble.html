@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event bubble js</title>
+</head>
+<body>
+    <h1>events delegate js dom</h1>
+    <button  id="addItem">add item</button>
+    <p style="display: inline; color: red;">or click into text for remove</p>
+    <section id="sectionContainer">
+        <ul id="list-container">
+            <li class="item">Lorem, ipsum dolor. X</li>
+            <li class="item">Mollitia, officiis delectus X</li>
+            <li class="item">Officiis, amet molestiae. X</li>
+            <li class="item">Ex, officiis a. X</li>
+            <li class="item">Officiis, autem accusamus! X</li>
+            <li class="item">Cum, sequi a X</li>
+        </ul>
+    </section>
+    
+    <script>
+        // const getItems = document.getElementsByClassName('item');
+        // for (const getItem  of getItems) {
+        // getItem.addEventListener('click', function(event){
+        //     event.target.parentNode.removeChild(event.target);
+        // });
+        // }
+
+        document.getElementById('list-container').addEventListener('click', function(events){
+            events.target.parentNode.removeChild(events.target)
+        });
+        
+        document.getElementById('addItem').addEventListener('click', function(){
+            const ulContainer= document.getElementById('list-container');
+
+            const createLi = document.createElement('li');
+            createLi.innerText = ' added a new brand';
+            createLi.classList.add('item');
+            ulContainer.appendChild(createLi);
+        });
+
+    </script>
+</body>
+</html>

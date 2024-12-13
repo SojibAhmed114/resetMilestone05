@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>github delete system</title>
+</head>
+<body>
+    <h1 class="textInfo">remove</h1>
+    <input type="text" name="" id="inputBox" placeholder="please type delete">
+    <button id="btn" disabled>remove now</button>
+
+
+    <script>
+        //part two make condition with ternary operator
+        document.querySelector('#inputBox').addEventListener('keyup', function(event){
+            const getText = event.target.value;
+            const removeBtn = document.getElementById('btn');
+            getText === 'delete'? removeBtn.removeAttribute('disabled'): removeBtn.setAttribute('disabled', true);
+        });
+
+        
+        //part Two make condition 
+        // document.getElementById('inputBox').addEventListener('keyup', function(events){
+        //     const text = events.target.value;
+        //     const btnRemover = document.getElementById('btn');
+        //     if(text === 'delete'){
+        //         btnRemover.removeAttribute('disabled');
+        //     }
+        //     else{
+        //         btnRemover.setAttribute('disabled', true)
+        //     }
+        // });
+        //part one : button click text remove
+        document.querySelector('#btn').addEventListener('click', function(){
+            const textRemove = document.querySelector('.textInfo');
+            textRemove.style.visibility = 'hidden'
+        });
+    </script>
+</body>
+</html>
